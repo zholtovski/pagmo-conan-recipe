@@ -76,6 +76,13 @@ class PagmoConan(ConanFile):
         extracted_dir = "source"
 
 
+    def configure(self):
+        if self.settings.compiler == "gcc" and self.settings.compiler.version < "7.0":
+            raise ConanException("GCC > 7.0 is required")
+        if self.settings.compiler == "clang" and self.settings.compiler.version < "4.0":
+            raise ConanException("Clang > 4.0 is required")
+
+
     def _configure_cmake(self):
         cmake = CMake(self)
         cmake.verbose = True
