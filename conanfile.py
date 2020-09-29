@@ -16,7 +16,7 @@ class PagmoConan(ConanFile):
     )
     topics = ("parallelization", "optimization")
     homepage = "https://esa.github.io/pagmo2/index.html"
-    exports = ["LICENSE.md"]  # Packages the license for the
+    exports = ["LICENSE.md"]
     exports_sources = ["CMakeLists.txt"]
     settings = "os", "compiler", "build_type", "arch"
     options = {
